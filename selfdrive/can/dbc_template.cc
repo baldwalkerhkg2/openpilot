@@ -1,6 +1,4 @@
-#include <cstdint>
-
-#include "common.h"
+#include "common_dbc.h"
 
 namespace {
 
@@ -27,7 +25,7 @@ const Signal sigs_{{address}}[] = {
       .type = SignalType::HONDA_COUNTER,
       {% elif checksum_type == "toyota" and sig.name == "CHECKSUM" %}
       .type = SignalType::TOYOTA_CHECKSUM,
-	    {% elif checksum_type == "volkswagen" and sig.name == "CHECKSUM" %}
+      {% elif checksum_type == "volkswagen" and sig.name == "CHECKSUM" %}
       .type = SignalType::VOLKSWAGEN_CHECKSUM,
       {% elif checksum_type == "volkswagen" and sig.name == "COUNTER" %}
       .type = SignalType::VOLKSWAGEN_COUNTER,
